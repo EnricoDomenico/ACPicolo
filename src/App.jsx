@@ -179,9 +179,9 @@ function HeroSection() {
                 className="flex gap-8 bg-charcoal-900/60 backdrop-blur-md px-8 py-4 rounded-lg border border-white/10"
               >
                 <HeroStatItem number={50} suffix="+" label="Anos de experiência" />
-                <HeroStatItem number={1200} suffix="+" label="Clientes satisfeitos" delay={0.2} />
-                <HeroStatItem number={100} suffix="+" label="Empresas realizadas" delay={0.3} />
-                <HeroStatItem number={1500} suffix="+" label="Casos resolvidos" delay={0.4} />
+                <HeroStatItem number={12000} suffix="+" label="Clientes satisfeitos" delay={0.2} />
+                <HeroStatItem number={1000} suffix="+" label="Empresas realizadas" delay={0.3} />
+                <HeroStatItem number={15000} suffix="+" label="Casos resolvidos" delay={0.4} />
               </motion.div>
             </div>
           </div>
@@ -248,8 +248,10 @@ function StatsBar() {
         <div className="bg-charcoal-900 rounded-2xl shadow-2xl px-12 py-10">
           <div className="grid grid-cols-3 divide-x divide-white/10">
             <StatItem number={50} suffix="+" label="anos de experiência" isInView={isInView} />
-            <StatItem number={1200} suffix="+" label="clientes satisfeitos" isInView={isInView} delay={0.2} />
-            <StatItem number={1500} suffix="+" label="casos resolvidos" isInView={isInView} delay={0.4} />
+            <StatItem number={12000} suffix="+" label="clientes satisfeitos" isInView={isInView} delay={0.2} />
+            <StatItem number={1000} suffix="+" label="empresas realizadas" isInView={isInView} delay={0.3} />
+            <StatItem number={15000} suffix="+" label="casos resolvidos" isInView={isInView} delay={0.4} />
+            <></>
           </div>
         </div>
       </div>
@@ -504,13 +506,13 @@ function TeamSection() {
           >
             <div className="space-y-6">
               <p className="text-base leading-relaxed">
-                Por trás de cada caso, uma equipe comprometida em resultados reais.
+                Com mais de 50 anos de atuação no mercado, Antonio Carlos Picolo Filho construiu uma trajetória sólida que une a precisão da contabilidade à estratégia do Direito.
               </p>
               <p className="text-base leading-relaxed">
-                Na AC Picolo mantemos nossos valores pautados em transparência, ética e um trabalho em equipe que garante soluções jurídicas diferenciadas.
+                Iniciou sua carreira no setor contábil em empresas de diversos portes e multinacionais, bagagem que converteu em um pilar analítico fundamental ao se tornar advogado tributarista e empresarial. Reconhecido como um dos nomes mais renomados do Brasil, sua experiência inclui passagens como Conselheiro da OAB/SP e diretor em grandes operações corporativas.
               </p>
               <p className="text-base leading-relaxed">
-                Acreditamos que o trabalho em equipe e a transformação contínua através de inovação e dedicação são os pilares que nos diferenciam, tornando-nos referência para clientes que exigem mais.
+                Hoje, à frente da AC Picolo, ele utiliza essa visão multidisciplinar para entregar soluções pautadas na ética e na inovação, consolidando-se como uma referência de confiança para clientes que buscam segurança jurídica e resultados reais.
               </p>
             </div>
           </motion.div>
