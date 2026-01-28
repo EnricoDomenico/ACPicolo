@@ -180,7 +180,7 @@ function HeroSection() {
               >
                 <HeroStatItem number={50} suffix="+" label="Anos de experiência" />
                 <HeroStatItem number={12000} suffix="+" label="Clientes satisfeitos" delay={0.2} />
-                <HeroStatItem number={1000} suffix="+" label="Empresas realizadas" delay={0.3} />
+                <HeroStatItem number={1000} suffix="+" label="Empresas consolidadas" delay={0.3} />
                 <HeroStatItem number={15000} suffix="+" label="Casos resolvidos" delay={0.4} />
               </motion.div>
             </div>
@@ -249,7 +249,7 @@ function StatsBar() {
           <div className="grid grid-cols-3 divide-x divide-white/10">
             <StatItem number={50} suffix="+" label="anos de experiência" isInView={isInView} />
             <StatItem number={12000} suffix="+" label="clientes satisfeitos" isInView={isInView} delay={0.2} />
-            <StatItem number={1000} suffix="+" label="empresas realizadas" isInView={isInView} delay={0.3} />
+            <StatItem number={1000} suffix="+" label="empresas consolidadas" isInView={isInView} delay={0.3} />
             <StatItem number={15000} suffix="+" label="casos resolvidos" isInView={isInView} delay={0.4} />
             <></>
           </div>
