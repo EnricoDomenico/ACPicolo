@@ -55,7 +55,9 @@ function Navbar({ isScrolled }) {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
-        className={`w-full max-w-4xl transition-all duration-500 rounded-full border ${
+        className={`w-full max-w-4xl transition-all duration-500 border ${
+          mobileMenuOpen ? 'rounded-2xl' : 'rounded-full'
+        } ${
           isScrolled 
             ? 'bg-black/10 backdrop-blur-sm border-white/10' 
             : 'bg-charcoal-900/95 backdrop-blur-md shadow-2xl border-white/10'
@@ -115,13 +117,14 @@ function Navbar({ isScrolled }) {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden border-t border-white/10 px-4 py-3 space-y-2"
+            transition={{ duration: 0.3 }}
+            className="md:hidden border-t border-white/10 px-6 pb-5 pt-3 space-y-1"
           >
             {navItems.map((item, index) => (
               <button
                 key={index}
                 onClick={() => scrollToSection(item.id)}
-                className="block w-full text-left text-white text-sm font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors"
+                className="block w-full text-left text-white text-sm font-medium py-2.5 px-4 rounded-lg hover:bg-white/10 transition-colors"
               >
                 {item.label}
               </button>
@@ -226,8 +229,9 @@ function HeroSection() {
                 className="flex flex-wrap lg:flex-nowrap gap-4 md:gap-6 lg:gap-8 bg-charcoal-900/60 backdrop-blur-md px-4 md:px-6 lg:px-8 py-3 md:py-4 rounded-lg border border-white/10 w-full lg:w-auto"
               >
                 <HeroStatItem number={50} suffix="+" label="Anos de experiência" />
-                <HeroStatItem number={12000} suffix="+" label="Clientes satisfeitos" delay={0.2} />
-                <HeroStatItem number={1000} suffix="+" label="Empresas consolidadas" delay={0.3} />
+                <HeroStatItem number={1200} suffix="+" label="Clientes satisfeitos" delay={0.2} />
+                <HeroStatItem number={100} suffix="+" label="Empresas satisfeitas" delay={0.3} />
+                <HeroStatItem number={1500} suffix="+" label="Casos resolvidos" delay={0.4} />
                 <HeroStatItem number={15000} suffix="+" label="Casos resolvidos" delay={0.4} />
               </motion.div>
             </div>
