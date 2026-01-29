@@ -229,9 +229,9 @@ function HeroSection() {
                 className="flex flex-wrap lg:flex-nowrap gap-4 md:gap-6 lg:gap-8 bg-charcoal-900/60 backdrop-blur-md px-4 md:px-6 lg:px-8 py-3 md:py-4 rounded-lg border border-white/10 w-full lg:w-auto"
               >
                 <HeroStatItem number={50} suffix="+" label="Anos de experiência" />
-                <HeroStatItem number={12000} suffix="+" label="Clientes satisfeitos" delay={0.2} />
-                <HeroStatItem number={1000} suffix="+" label="Empresas consolidadas" delay={0.3} />
-                <HeroStatItem number={15000} suffix="+" label="Casos resolvidos" delay={0.4} />
+                <HeroStatItem number={3000} suffix="+" label="Clientes satisfeitos" delay={0.2} />
+                <HeroStatItem number={200} suffix="+" label="Empresas consolidadas" delay={0.3} />
+                <HeroStatItem number={5000} suffix="+" label="Casos resolvidos" delay={0.4} />
               </motion.div>
             </div>
           </div>
@@ -298,9 +298,9 @@ function StatsBar() {
         <div className="bg-charcoal-900 rounded-2xl shadow-2xl px-12 py-10">
           <div className="grid grid-cols-3 divide-x divide-white/10">
             <StatItem number={50} suffix="+" label="anos de experiência" isInView={isInView} />
-            <StatItem number={12000} suffix="+" label="clientes satisfeitos" isInView={isInView} delay={0.2} />
-            <StatItem number={1000} suffix="+" label="empresas consolidadas" isInView={isInView} delay={0.3} />
-            <StatItem number={15000} suffix="+" label="casos resolvidos" isInView={isInView} delay={0.4} />
+            <StatItem number={3000} suffix="+" label="clientes satisfeitos" isInView={isInView} delay={0.2} />
+            <StatItem number={200} suffix="+" label="empresas consolidadas" isInView={isInView} delay={0.3} />
+            <StatItem number={5000} suffix="+" label="casos resolvidos" isInView={isInView} delay={0.4} />
             <></>
           </div>
         </div>
