@@ -27,14 +27,18 @@ function App() {
 
 // ==================== NAVBAR ====================
 function Navbar({ isScrolled }) {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
   const scrollToSection = (sectionId) => {
     if (sectionId === 'contato') {
       window.open('https://wa.me/message/3PALZRTCRHR4H1', '_blank')
+      setMobileMenuOpen(false)
       return
     }
     const element = document.getElementById(sectionId)
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      setMobileMenuOpen(false)
     }
   }
 
@@ -46,7 +50,7 @@ function Navbar({ isScrolled }) {
   ]
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-4 px-6">
+    <div className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-2 md:pt-4 px-3 md:px-6">
       <motion.nav
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -57,19 +61,19 @@ function Navbar({ isScrolled }) {
             : 'bg-charcoal-900/95 backdrop-blur-md shadow-2xl border-white/10'
         }`}
       >
-        <div className="px-6 py-2.5 flex items-center justify-between">
+        <div className="px-4 md:px-6 py-2 md:py-2.5 flex items-center justify-between">
           {/* Logo */}
           <div className="text-white">
             <img 
               src="/logo.png" 
               alt="AC Picolo" 
-              className="h-12 w-auto cursor-pointer transition-all duration-300 hover:scale-105"
+              className="h-9 md:h-12 w-auto cursor-pointer transition-all duration-300 hover:scale-105"
               onClick={() => scrollToSection('hero')}
             />
           </div>
 
-          {/* Navigation Links */}
-          <div className="flex gap-6">
+          {/* Desktop Navigation Links */}
+          <div className="hidden md:flex gap-6">
             {navItems.map((item, index) => (
               <NavLink 
                 key={index} 
@@ -80,7 +84,50 @@ function Navbar({ isScrolled }) {
               </NavLink>
             ))}
           </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden text-white p-2 focus:outline-none"
+            aria-label="Menu"
+          >
+            <svg 
+              className="w-6 h-6" 
+              fill="none" 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              strokeWidth="2" 
+              viewBox="0 0 24 24" 
+              stroke="currentColor"
+            >
+              {mobileMenuOpen ? (
+                <path d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
+          </button>
         </div>
+
+        {/* Mobile Menu Dropdown */}
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden border-t border-white/10 px-4 py-3 space-y-2"
+          >
+            {navItems.map((item, index) => (
+              <button
+                key={index}
+                onClick={() => scrollToSection(item.id)}
+                className="block w-full text-left text-white text-sm font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors"
+              >
+                {item.label}
+              </button>
+            ))}
+          </motion.div>
+        )}
       </motion.nav>
     </div>
   )
@@ -131,15 +178,15 @@ function HeroSection() {
       </motion.div>
 
       {/* Content */}
-      <div className="relative z-20 h-full flex items-center pb-20 pt-36">
-        <div className="max-w-7xl mx-auto px-6 w-full">
+      <div className="relative z-20 h-full flex items-center pb-12 md:pb-20 pt-24 md:pt-36">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 w-full">
           <div className="max-w-2xl">
             {/* Headline */}
             <motion.h1
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
-              className="text-6xl md:text-7xl font-bold text-white mb-6 leading-tight text-shadow"
+              className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 md:mb-6 leading-tight text-shadow"
             >
               Advocacia Estratégica para Resultados Reais
             </motion.h1>
@@ -149,13 +196,13 @@ function HeroSection() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6, ease: 'easeOut' }}
-              className="text-lg text-white/90 mb-12 leading-relaxed"
+              className="text-base md:text-lg text-white/90 mb-8 md:mb-12 leading-relaxed"
             >
               Na AC Picolo, oferecemos soluções jurídicas personalizadas com uma abordagem estratégica que prioriza o seu interesse e traz resultados concretos.
             </motion.p>
 
             {/* CTA Button + Stats Container */}
-            <div className="flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-16">
+            <div className="flex flex-col lg:flex-row items-start lg:items-center gap-6 md:gap-8 lg:gap-16">
               {/* CTA Button */}
               <motion.a
                 href="https://wa.me/message/3PALZRTCRHR4H1"
@@ -166,7 +213,7 @@ function HeroSection() {
                 transition={{ duration: 0.8, delay: 0.9, ease: 'easeOut' }}
                 whileHover={{ scale: 1.05, backgroundColor: '#ffffff' }}
                 whileTap={{ scale: 0.95 }}
-                className="inline-block bg-white/95 text-charcoal-900 px-8 py-4 rounded-md font-medium text-base transition-all duration-300 hover:shadow-xl whitespace-nowrap"
+                className="inline-block bg-white/95 text-charcoal-900 px-6 md:px-8 py-3 md:py-4 rounded-md font-medium text-sm md:text-base transition-all duration-300 hover:shadow-xl whitespace-nowrap"
               >
                 Agende uma consulta
               </motion.a>
@@ -176,7 +223,7 @@ function HeroSection() {
                 initial={{ opacity: 0, x: 40 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 1.1, ease: 'easeOut' }}
-                className="flex gap-8 bg-charcoal-900/60 backdrop-blur-md px-8 py-4 rounded-lg border border-white/10"
+                className="flex flex-wrap lg:flex-nowrap gap-4 md:gap-6 lg:gap-8 bg-charcoal-900/60 backdrop-blur-md px-4 md:px-6 lg:px-8 py-3 md:py-4 rounded-lg border border-white/10 w-full lg:w-auto"
               >
                 <HeroStatItem number={50} suffix="+" label="Anos de experiência" />
                 <HeroStatItem number={12000} suffix="+" label="Clientes satisfeitos" delay={0.2} />
@@ -220,11 +267,11 @@ function HeroStatItem({ number, suffix, label, delay = 0 }) {
   }, [number, delay])
 
   return (
-    <div className="text-center border-r border-white/10 last:border-r-0 pr-8 last:pr-0">
-      <div className="text-3xl font-serif font-bold text-white mb-1">
+    <div className="flex-1 text-center border-r border-white/10 last:border-r-0 pr-4 md:pr-6 lg:pr-8 last:pr-0 min-w-[100px] md:min-w-[120px]">
+      <div className="text-2xl md:text-3xl font-serif font-bold text-white mb-1">
         {count}{suffix}
       </div>
-      <div className="text-xs text-white/70 uppercase tracking-wider font-sans">
+      <div className="text-[10px] md:text-xs text-white/70 uppercase tracking-wider font-sans">
         {label}
       </div>
     </div>
