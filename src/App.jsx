@@ -229,9 +229,8 @@ function HeroSection() {
                 className="flex flex-wrap lg:flex-nowrap gap-4 md:gap-6 lg:gap-8 bg-charcoal-900/60 backdrop-blur-md px-4 md:px-6 lg:px-8 py-3 md:py-4 rounded-lg border border-white/10 w-full lg:w-auto"
               >
                 <HeroStatItem number={50} suffix="+" label="Anos de experiência" />
-                <HeroStatItem number={1200} suffix="+" label="Clientes satisfeitos" delay={0.2} />
-                <HeroStatItem number={100} suffix="+" label="Empresas satisfeitas" delay={0.3} />
-                <HeroStatItem number={1500} suffix="+" label="Casos resolvidos" delay={0.4} />
+                <HeroStatItem number={12000} suffix="+" label="Clientes satisfeitos" delay={0.2} />
+                <HeroStatItem number={1000} suffix="+" label="Empresas consolidadas" delay={0.3} />
                 <HeroStatItem number={15000} suffix="+" label="Casos resolvidos" delay={0.4} />
               </motion.div>
             </div>
